@@ -270,7 +270,7 @@ ver archivo **FullCalendarDuplicado.html** --> [FullCalendarDuplicado](FullCalen
 
 El código que está aquí tratando de añadir la mágia a nuestro calendario es el siguiente código javascript
 
-####Javascript
+#### Javascript
 
 ```javascript
 drop: function(date, jsEvent, ui, resourceId) {
@@ -305,7 +305,7 @@ No obstante, ni con **chatgpt 4** pude solucionar que se pueda generar un evento
 
 Ahora viene la gran pregunta:
 
-###¿Cómo solucionamos los eventos duplicados?
+### ¿Cómo solucionamos los eventos duplicados?
 
 con el siguiente código:
 
@@ -476,7 +476,7 @@ ver archivo **FullCalendarioFuncionaOk.html** --> [FullCalendarioFuncionaOk](Ful
 
 La otra mágia está en el siguiente trozo de código:
 
-####Javascript
+#### Javascript
 
 ```javascript
 
@@ -501,4 +501,4 @@ drop: function () {
 
 ---
 
-###End
+### End
