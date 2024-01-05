@@ -13,7 +13,7 @@ Crear un calendario interactivo con eventos arrastrables puede ser un desafío, 
 - jQuery (opcional, dependiendo de tu versión de FullCalendar)
 
 #### Código HTML base.
-Ver archivo **ejemplo1.html**
+Ver archivo **ejemplo1.html** --> [Ejemplo 1](ejemplo1.html)
 
 ```html
 <!DOCTYPE html>
@@ -144,11 +144,11 @@ He realizado diversas pruebas y aun con **chatgpt 4** he presentado problemas.
 
 Adjunto un ejemplo con el evento duplicado cuando intento añadir una hora de inicio y otra final:
 
-Ver archivo **FullCalendarDuplicado.html**
+
 
 #### Código HTML base.
 
-ver archivo **FullCalendarDuplicado.html**
+ver archivo **FullCalendarDuplicado.html** --> [FullCalendarDuplicado](FullCalendarDuplicado.html)
 
 ```html
 <!DOCTYPE html>
@@ -305,7 +305,7 @@ con el siguiente código:
 
 #### Código HTML base.
 
-ver archivo **FullCalendarioFuncionaOk.html**
+ver archivo **FullCalendarioFuncionaOk.html** --> [FullCalendarioFuncionaOk](FullCalendarioFuncionaOk.html)
 
 ```html
 <script>
