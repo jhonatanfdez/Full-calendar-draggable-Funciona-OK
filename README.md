@@ -12,7 +12,7 @@ Crear un calendario interactivo con eventos arrastrables puede ser un desafío, 
 - FullCalendar JavaScript Library
 - jQuery (opcional, dependiendo de tu versión de FullCalendar)
 
-####Código HTML base.
+#### Código HTML base.
 Ver archivo **ejemplo1.html**
 
 ```html
@@ -146,7 +146,7 @@ Adjunto un ejemplo con el evento duplicado cuando intento añadir una hora de in
 
 Ver archivo **FullCalendarDuplicado.html**
 
-####Código HTML base.
+#### Código HTML base.
 
 ver archivo **FullCalendarDuplicado.html**
 
@@ -303,7 +303,7 @@ Ahora viene la gran pregunta:
 
 con el siguiente código:
 
-####Código HTML base.
+#### Código HTML base.
 
 ver archivo **FullCalendarioFuncionaOk.html**
 
