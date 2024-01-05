@@ -1,5 +1,11 @@
 # Proyecto Full Calendar con Eventos Draggables funcionadndo correctamente
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://solibeth.net/sites/default/files/Solibeth_0_0.png)
+
+[Visita mi blog](https://solibeth.net/full-calendar-con-eventos-draggables-sin-duplicados)
+
+
+![Full calendar](imagen.png)
+
 
 Este proyecto demuestra cómo implementar un calendario interactivo utilizando Full Calendar con la opción de arrastrar y soltar (draggable) eventos sin crear duplicados.
 
