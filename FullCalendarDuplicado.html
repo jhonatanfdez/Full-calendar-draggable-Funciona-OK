@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario con FullCalendar y Bootstrap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/locale/es.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="eventos" class="external-events">
+        <h4>Tipos de eventos</h4>
+        <div class="fc-event" data-color="red">Ausencia</div>
+        <div class="fc-event" data-color="green">Asistencia</div>
+        <div class="fc-event" data-color="gray">Permiso</div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div id="calendario"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var calendar = $('#calendario').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      locale: 'es',
+      editable: true,
+      eventLimit: true,
+      droppable: true,
+      events: [],
+
+      drop: function (date, jsEvent, ui, resourceId) {
+        var color = ui.helper.data('color');
+        var title = ui.helper.text();
+
+        var newEvent = {
+          title: title,
+          start: date.format(),
+          color: color
+        };
+
+        console.log(newEvent);
+
+        calendar.fullCalendar('renderEvent', newEvent, true);
+      }
+    });
+
+    $('.fc-event').each(function () {
+      $(this).data('event', {
+        title: $.trim($(this).text()),
+        stick: true
+      });
+
+      $(this).draggable({
+        zIndex: 999,
+        revert: true,
+        revertDuration: 0,
+        helper: 'clone', // Clona el elemento arrastrado
+        appendTo: 'body' // Añade el clon al cuerpo del documento}
+
+
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

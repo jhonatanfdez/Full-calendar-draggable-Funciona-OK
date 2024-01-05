@@ -1,0 +1,103 @@
+
+<script>
+    let eventos  = [{
+                title: 'Meeting',
+                start: '2024-01-10T10:30:00',
+                end: '2024-01-10T12:30:00'
+              },
+               {
+                title: 'Meeting',
+                start: '2024-01-10T10:30:00',
+                end: '2024-01-10T12:30:00'
+              },
+               {
+                title: 'Meeting',
+                start: '2024-01-10T10:30:00',
+                end: '2024-01-10T12:30:00'
+              }];
+    
+    </script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fullcalendar.io/releases/fullcalendar/3.10.0/fullcalendar.min.css' rel='stylesheet' />
+  <link href='https://fullcalendar.io/releases/fullcalendar/3.10.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+  <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
+  <script src='https://fullcalendar.io/releases/fullcalendar/3.10.0/lib/moment.min.js'></script>
+  <script src='https://fullcalendar.io/releases/fullcalendar/3.10.0/fullcalendar.min.js'></script>
+  <style>
+    #external-events {
+      padding: 10px;
+      width: 20%;
+      background: #f7f7f7;
+    }
+    #calendar {
+      flex-grow: 1;
+    }
+    .fc-event {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .vacaciones-event {
+      background-color: red;
+      color: white;
+      border: none;
+    }
+    .permisos-event {
+      background-color: yellow;
+      color: black;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="display:flex;">
+    <div id="external-events">
+      <h4>Tipos de Eventos</h4>
+      <div class='fc-event vacaciones-event' data-title="Vacaciones" data-start="08:00" data-end="17:00">Vacaciones</div>
+      <div class='fc-event permisos-event' data-title="Permisos" data-start="08:00" data-end="17:00">Permisos</div>
+    </div>
+    <div id='calendar'></div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#external-events .fc-event').each(function() {
+        $(this).data('event', {
+          title: $.trim($(this).data('title')),
+          stick: true,
+          color: $(this).css('background-color'),
+          startTime: $(this).data('start'),
+          endTime: $(this).data('end')
+        });
+        $(this).draggable({
+          zIndex: 999,
+          revert: true,
+          revertDuration: 0
+        });
+      });
+
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        editable: true,
+        droppable: true,
+        drop: function() {
+          if ($('#drop-remove').is(':checked')) {
+            $(this).remove();
+          }
+        },
+        events: eventos
+        // Configuraciones adicionales del calendario...
+      });
+    });
+  </script>
+
+</body>
+</html>
